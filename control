@@ -1,0 +1,9 @@
+Package: com.imkpatil.easyeditalarms
+Name: EasyEditAlarms
+Depends: mobilesubstrate
+Version: 1.1.1
+Architecture: iphoneos-arm
+Description: Edit Alarms with a single tap!
+Maintainer: P2KDev <p2kdev@gmail.com>
+Author: P2KDev <p2kdev@gmail.com>
+Section: Tweaks
