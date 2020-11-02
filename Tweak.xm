@@ -5,6 +5,7 @@
 @interface MTAAlarmTableViewController
   - (void)showEditViewForRow:(long long)arg1;
   - (void)showSleepControlsView;
+  - (void)showSleepView;
 @end
 
 %hook MTAAlarmTableViewController
@@ -25,6 +26,8 @@
         else
           [cell setTag:arg2.row];
       }
+      else if ([cell isKindOfClass:NSClassFromString(@"MTASleepAlarmTableViewCell")] || [cell isKindOfClass:NSClassFromString(@"MTASetupSleepTableViewCell")])
+        [cell setTag:-2];
       else
         [cell setTag:arg2.row];
 
@@ -40,6 +43,8 @@
     {
       if (sender.view.tag == -1)
         [self showSleepControlsView];
+      else if (sender.view.tag == -2)
+        [self showSleepView];
       else
        [self showEditViewForRow:sender.view.tag];
     }
