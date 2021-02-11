@@ -28,8 +28,6 @@
       }
       else if ([cell isKindOfClass:NSClassFromString(@"MTASleepAlarmTableViewCell")] || [cell isKindOfClass:NSClassFromString(@"MTASetupSleepTableViewCell")])
         [cell setTag:-2];
-      else
-        [cell setTag:arg2.row];
 
       return cell;
    }
@@ -45,7 +43,7 @@
         [self showSleepControlsView];
       else if (sender.view.tag == -2)
         [self showSleepView];
-      else
+      else if (sender.view.tag >= 0)
        [self showEditViewForRow:sender.view.tag];
     }
 
